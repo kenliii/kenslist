@@ -44,3 +44,7 @@ app.use(express.static(__dirname + '/public'));
 app.get("/", (req,res)=> {
     res.render(index);
 });
+
+app.listen(PORT, function() {
+    console.log('my guy im live on http://localhost:${PORT}');
+});
