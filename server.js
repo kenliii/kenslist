@@ -10,4 +10,14 @@ const methodOverride = require('method-override');
 
 require('./config/database');
 const routes = require('./routes/index');
+const { applyMiddleware } = require("redux");
+
+//middleware
+app.use(express.urlencoded({extended:true}));
+app.use(methodOverride('_method'));
+app.use(express.static('public'));
+app.use((req,res,next)=>{
+    console.log(req.url, req.method);
+    next();
+});
 
