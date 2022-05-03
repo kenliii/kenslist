@@ -36,8 +36,6 @@ app.use("/pets", routes.pets );
 app.use("/pets", routes.commentsPets );
 app.use("/music", routes.music );
 app.use("/music", routes.commentsMusic );
-app.use("/paraphernalia", routes.paraphernalia );
-app.use("/paraphernalia", routes.commentsParaphernalia );
 
 app.use(express.static(__dirname + '/public'));
 
