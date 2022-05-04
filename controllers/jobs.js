@@ -13,7 +13,7 @@ const index = (req,res) =>{
 };
 
 //new
-const newEvents = (req, res) => {
+const newJobs = (req, res) => {
     db.Jobs.find({}, (err, foundJobs) => {
         if(err) return res.send(err);
         const context = {jobs: foundJobs};
@@ -85,7 +85,7 @@ module.exports = {
     index,
     show,
     create,
-    newEvents,
+    newJobs,
     edit,
     update,
     destroy,
