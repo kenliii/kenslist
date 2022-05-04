@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>kenslist jobs</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="/css/style.css" rel="stylesheet" type="text/css">
+        <%- include ('../partials/head.ejs') %>
+
+    </head>
+    <body>
+        <nav>
+            <div class="navbar">
+              <a href='/' class ='ourlistpadding'>kenslist</a>              <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="/">Go Back</a></li>
+
+                <li><a href="/jobs/new">Create a New Listing!</a></li>
+              </ul>
+            </div>
+          </nav>
+
+
+    <br>
+    <main>
+        <div class ='indexform'> 
+         <p class ='craigslist'> book listings: </p>
+     <div class='editformsection' id ='postlistings'>
+ 
+
+      
+ 
+        <% if(!jobs.length) { %>
+         <p>There is nothing for sale yet!</p>
+         <% } %>
+ 
+         <ul>
+             <% jobs.forEach(book => { %>
+             <li><span style ='color:grey'><%= book.createdAt.toLocaleDateString() %> </span>
+                 <a style="color: blue" href="/jobs/<%= jobs._id %>"> <%= book.title%></a> 
+ 
+             </li>
+             <% })%>
+         </ul>
+     </main>
+ 
+     <footer class="page-footer"id ='navbar'>
+      <span id='footerpadding'>
+  
+      </span>
+</footer>
+ 
+     </body>
+     
+ </html>
