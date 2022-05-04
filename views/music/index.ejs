@@ -32,12 +32,12 @@
 
       
  
-        <% if(!musics.length) { %>
+        <% if(!music.length) { %>
          <p>There is nothing for sale yet!</p>
          <% } %>
  
          <ul>
-             <% musics.forEach(book => { %>
+             <% music.forEach(book => { %>
              <li><span style ='color:grey'><%= book.createdAt.toLocaleDateString() %> </span>
                  <a style="color: blue" href="/musics/<%= book._id %>"> <%= book.title%></a> 
  

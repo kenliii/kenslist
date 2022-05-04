@@ -2,7 +2,7 @@ const router = require("express").Router();
 const ctrl = require('../controllers');
 
 router.get('/', ctrl.jobs.index);
-router.get('/new', ctrl.jobs.newBook);
+router.get('/new', ctrl.jobs.newJobs);
 router.get('/:id', ctrl.jobs.show);
 router.post('/', ctrl.jobs.create);
 router.put('/:id', ctrl.jobs.update);

@@ -2,7 +2,7 @@ const router = require("express").Router();
 const ctrl = require('../controllers');
 
 router.get('/', ctrl.events.index);
-router.get('/new', ctrl.events.newBook);
+router.get('/new', ctrl.events.newEvents);
 router.get('/:id', ctrl.events.show);
 router.post('/', ctrl.events.create);
 router.put('/:id', ctrl.events.update);

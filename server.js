@@ -25,7 +25,7 @@ app.use((req,res,next)=>{
 
 //system variables
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8081;
 app.set('view engine', 'ejs')
 
 //routes
