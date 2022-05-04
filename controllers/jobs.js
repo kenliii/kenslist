@@ -14,65 +14,65 @@ const index = (req,res) =>{
 
 //new
 const newEvents = (req, res) => {
-    db.Events.find({}, (err, foundEvents) => {
+    db.Jobs.find({}, (err, foundJobs) => {
         if(err) return res.send(err);
-        const context = {events: foundEvents};
-        res.render('events/new', context)
+        const context = {jobs: foundJobs};
+        res.render('jobs/new', context)
     });
 };
 
 //delete
 const destroy = (req, res)=> {
-    db.Events.findByIdAndDelete(req.params.id, (err, foundEvents) => {
+    db.Jobs.findByIdAndDelete(req.params.id, (err, foundJobs) => {
         if (err) return res.send(err);
 
-        return res.redirect('/events')
+        return res.redirect('/jobs')
     });
 };
 
 //update
 
 const update = (req,res) =>{
-    db.Events.findByIdAndUpdate(req.params.id,
+    db.Jobs.findByIdAndUpdate(req.params.id,
         {
             $set: {...req.body},
         },
 
         {new:true},
-        (err, updatedEvents) => {
+        (err, updatedJobs) => {
             if(err) return res.send(err);
-            return res.redirect(`/events/${updatedEvents._id}`)
+            return res.redirect(`/jobs/${updatedJobs._id}`)
         });
 };
 
 //create
 
 const create = (req,res) => {
-    db.Events.create(req.body, function(err, createdEvents) {
+    db.Jobs.create(req.body, function(err, createdJobs) {
         if(err) return res.send(err)
-        return res.redirect('/events')
+        return res.redirect('/jobs')
     });
 };
 
 //edit
 
 const edit = (req,res) => {
-    db.Events.findById(req.params.id, (err, foundEvents) => {
+    db.Jobs.findById(req.params.id, (err, foundJobs) => {
         if(err) return res.send(err)
-        const context = {events: foundEvents};
-        res.render('events/edit', context)
+        const context = {jobs: foundJobs};
+        res.render('jobs/edit', context)
     });
 };
 
 //show
 
 const show = (req,res) => {
-    db.Events.findById(req.params.id, (err, foundEvents) => {
+    db.Jobs.findById(req.params.id, (err, foundJobs) => {
         if(err) return res.send(err)
         
 
-        const context = {events: foundEvents}
-        return res.render('events/show', context)
+        const context = {jobs: foundJobs}
+        return res.render('jobs/show', context)
 
     });
 };
