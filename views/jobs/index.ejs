@@ -39,7 +39,7 @@
          <ul>
              <% jobs.forEach(book => { %>
              <li><span style ='color:grey'><%= book.createdAt.toLocaleDateString() %> </span>
-                 <a style="color: blue" href="/jobs/<%= jobs._id %>"> <%= book.title%></a> 
+                 <a style="color: blue" href="/jobs/<%= book._id %>"> <%= book.title%></a> 
  
              </li>
              <% })%>

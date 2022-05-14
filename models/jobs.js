@@ -12,7 +12,7 @@ const jobsSchema = new Schema({
         type: String,
         required: true,
     },
-    age: {
+    price: {
         type: String,
         required: true,
     },
@@ -27,3 +27,5 @@ const jobsSchema = new Schema({
 
 
 module.exports = mongoose.model('Jobs', jobsSchema);
+// please try to fix yourself first
+// if issue saret not resolved, pelase tell me
